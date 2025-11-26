@@ -1,5 +1,5 @@
 <?php
-namespace RakutenApi\Domain\ItemSearch\ValueObject;
+namespace RakutenApi\Application\Dto;
 
 /**
  * 楽天 商品検索API の検索条件を表す ValueObject。
@@ -88,7 +88,7 @@ class ItemSearchParams
         public ?string $sortKey = null,
         public ?string $sortOrder = null,
         public ?int $offset = null,
-        public ?int $hits = null,
+        public ?int $hits = 100,
         public ?string $cursorMark = null,
         public ?bool $isCategoryIncluded = null,
         public ?bool $isReviewIncluded = null,
@@ -153,8 +153,8 @@ class ItemSearchParams
             $data['updatedTo'] ?? null,
             $data['sortKey'] ?? null,
             $data['sortOrder'] ?? null,
-            $data['offset'] ?? null,
-            $data['hits'] ?? null,
+            $data['offset'] ?? 0,
+            $data['hits'] ?? 100,
             $data['cursorMark'] ?? null,
             $data['isCategoryIncluded'] ?? null,
             $data['isReviewIncluded'] ?? null,
@@ -217,6 +217,6 @@ class ItemSearchParams
      */
     public function toArray(): array
     {
-        return get_object_vars($this);
+        return array_map(fn($n)=>($n===true?"true":$n),get_object_vars($this));
     }
 }

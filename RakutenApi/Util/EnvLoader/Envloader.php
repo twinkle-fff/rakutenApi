@@ -5,7 +5,7 @@ use Dotenv\Dotenv;
 use Exception;
 
 class Envloader{
-    private const string DEFAULT_FILENAME = "env.local";
+    private const string DEFAULT_FILENAME = ".env.local";
     private static ?string $envFilePath = null;
     private static ?string $envFileName = null;
     private static ?Dotenv $dotenv = null;
