@@ -116,7 +116,7 @@ readonly class Order extends BaseResponseDto
         public ?int $shippingTerm,
         public ?string $remarks,
         public int $giftCheckFlag,
-        public int $socialGiftFlag,
+        public ?int $socialGiftFlag,
         public int $severalSenderFlag,
         public int $equalSenderFlag,
         public int $isolatedIslandFlag,

@@ -39,7 +39,7 @@ class GetOrderDetail
     /**
      * API version デフォルト値（現在最新）
      */
-    private const int DEFAULT_API_VERSION = 10;
+    private const int DEFAULT_API_VERSION = 9;
 
     /**
      * コンストラクタ。

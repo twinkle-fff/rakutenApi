@@ -12,11 +12,7 @@ readonly class ComfirmOrderResponse{
     {}
 
     public static function fromResponse(array $response){
-        if(!isset($response["MessageModelList"]) || empty($response["MessageModelList"]) || !isset($response["MessageModelList"]["message"])){
-            throw new Exception("楽天注文確認に失敗しました。必須パラメータがありません。");
-        }
-
-        $body = $response["MessageModelList"];
+        $body = $response["MessageModelList"][0];
 
         return new ComfirmOrderResponse(
             $body["message"],

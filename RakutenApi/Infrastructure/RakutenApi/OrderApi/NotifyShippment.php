@@ -91,6 +91,6 @@ class NotifyShippment
             ? true
             : throw new Exception(
                 '楽天商品発送報告に失敗しました。detail:' . ($response['message'] ?? '不明なエラー')
-            );
+        );
     }
 }

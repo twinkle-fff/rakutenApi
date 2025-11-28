@@ -1,16 +1,17 @@
 <?php
 
+
 use RakutenApi\Infrastructure\RakutenApi\OrderApi\Dto\OrderDetail\Order;
+use RakutenApi\Infrastructure\RakutenApi\OrderApi\Dto\SearchOrder\SearchOrderParams;
+use RakutenApi\Infrastructure\RakutenApi\OrderApi\Enum\OrderDateType;
+use RakutenApi\Infrastructure\RakutenApi\OrderApi\OrderApi;
+use RakutenApi\Infrastructure\RakutenApi\OrderApi\ValueObject\RakutenOrderNumber;
 
 require_once __DIR__."/../vendor/autoload.php";
 
-$json = file_get_contents(__DIR__."/../tmp.json");
-$data = json_decode($json,true);
-if(json_last_error() != JSON_ERROR_NONE){
-    die(json_last_error_msg());
-}
+$orderApi = new OrderApi();
 
-$ob = $data["OrderModelList"][0];
-$obj = Order::fromResponse($ob);
-$size = strlen(serialize($obj));
-echo("object size is {$size}".PHP_EOL);
+$on = new RakutenOrderNumber("406156-20251128-0302141914");
+$res = $orderApi->comfirmOrder([$on]);
+
+var_dump($res);

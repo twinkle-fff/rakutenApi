@@ -60,7 +60,7 @@ readonly class SearchOrderResponse
         return new SearchOrderResponse(
             $response["MessageModelList"],
             array_map(
-                fn($n) => new RakutenOrderNumber($n),
+                fn($n): RakutenOrderNumber => (new RakutenOrderNumber($n)),
                 $response["orderNumberList"] ?? []
             ),
             $response["PaginationResponseModel"]["totalRecordsAmount"] ?? null,

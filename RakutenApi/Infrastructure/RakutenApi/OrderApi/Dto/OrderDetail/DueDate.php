@@ -15,6 +15,6 @@ readonly class DueDate extends BaseResponseDto
      */
     protected function __construct(
         public int $dueDateType,
-        public DateTimeInterface $dueDate
+        public DateTime $dueDate
     ) {}
 }

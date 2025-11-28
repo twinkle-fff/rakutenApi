@@ -1,11 +1,13 @@
 <?php
 namespace RakutenApi\Infrastructure\RakutenApi\OrderApi\Dto\SearchOrder;
 
+use BackedEnum;
 use BadMethodCallException;
 use DateTimeImmutable;
 use DateTimeInterface;
 use Exception;
 use InvalidArgumentException;
+use RakutenApi\Infrastructure\RakutenApi\OrderApi\Enum\OrderDateType;
 use RakutenApi\Infrastructure\RakutenApi\OrderApi\Enum\OrderProgress;
 
 /**
@@ -49,7 +51,7 @@ class SearchOrderParams
      * 期間検索種別。
      * 楽天仕様に沿ったint値（例: 注文日、出荷日などの種別）。
      */
-    private int $dateType;
+    private OrderDateType $dateType;
 
     /**
      * 検索開始日時（"Y-m-d\TH:i:s+0900" 形式の文字列）。
@@ -129,7 +131,7 @@ class SearchOrderParams
      * 取得ページ番号。
      * toArray() 時には PaginationRequestModel['requestPage'] にマッピングされる。
      */
-    private ?int $requestPage = null;
+    private int $requestPage = 0;
 
     /**
      * 必須パラメータはコンストラクタで受け取る。
@@ -145,15 +147,29 @@ class SearchOrderParams
      * @throws InvalidArgumentException 入力日時が不正な場合
      */
     public function __construct(
-        int $dateType,
+        int|string|OrderDateType $dateType,
         int|string|DateTimeInterface $startDatetime,
         int|string|DateTimeInterface $endDatetime,
         ?int $requestRecordsAmount = null
     ) {
-        $this->dateType              = $dateType;
+        $this->dateType              = $this->normalizeDateType($dateType);
         $this->startDatetime         = $this->castISO($startDatetime);
         $this->endDatetime           = $this->castISO($endDatetime);
         $this->requestRecordsAmount  = $requestRecordsAmount ?? self::DEFAULT_ORDER_RECORDS;
+    }
+
+    private function normalizeDateType(int|string|OrderDateType $datetype){
+        if($datetype instanceof OrderDateType){
+            return $datetype;
+        }
+
+        if(is_int($datetype)){
+            return OrderDateType::tryFrom($datetype);
+        }
+
+        if(is_string($datetype)){
+            return OrderDateType::fromLabel($datetype);
+        }
     }
 
     /**
@@ -220,6 +236,11 @@ class SearchOrderParams
             }
 
             if ($value instanceof OrderProgress) {
+                $result[$property] = $value->value;
+                continue;
+            }
+
+            if ($value instanceof BackedEnum){
                 $result[$property] = $value->value;
                 continue;
             }
