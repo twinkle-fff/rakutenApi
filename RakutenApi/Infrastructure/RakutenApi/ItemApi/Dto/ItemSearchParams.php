@@ -1,5 +1,5 @@
 <?php
-namespace RakutenApi\Application\Dto;
+namespace RakutenApi\Infrastructure\RakutenApi\ItemApi\Dto;
 
 /**
  * 楽天 商品検索API の検索条件を表す ValueObject。

@@ -4,8 +4,9 @@ namespace RakutenApi\Infrastructure\RakutenApi\ItemApi;
 require_once __DIR__ . "/../../../../vendor/autoload.php";
 
 use Generator;
-use RakutenApi\Application\Dto\ItemSearchParams;
+
 use RakutenApi\Application\Port\RakutenApi\ItemAPiPort;
+use RakutenApi\Infrastructure\RakutenApi\ItemApi\Dto\ItemSearchParams;
 use RakutenApi\Infrastructure\RakutenApi\ItemApi\Dto\RakutenSearchItemResponse;
 use RakutenApi\Infrastructure\RakutenApi\Shared\RakutenApiClient;
 

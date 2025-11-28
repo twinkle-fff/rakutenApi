@@ -1,9 +1,8 @@
 <?php
 namespace RakutenApi\Application\Port\RakutenApi;
 
-use RakutenApi\Application\Dto\ItemSearchParams;
-use RakutenApi\Infrastructure\RakutenApi\ItemApi\Dto\RakutenSearchItemResponse;
 use Generator;
+use RakutenApi\Infrastructure\RakutenApi\ItemApi\Dto\ItemSearchParams;
 
 /**
  * ItemAPiPort
@@ -24,7 +23,7 @@ interface ItemAPiPort
      * - API の複数ページを内部でハンドリング
      * - 1商品ずつ逐次 yield する
      *
-     * @param array|ItemSearchParams|null $params
+     * @param array||null $params
      *        API 検索パラメータ（null の場合 defaultParams が適用される）
      *
      * @return Generator<array>
