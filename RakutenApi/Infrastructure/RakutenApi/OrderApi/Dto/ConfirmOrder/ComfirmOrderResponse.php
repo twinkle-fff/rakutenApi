@@ -11,7 +11,7 @@ readonly class ComfirmOrderResponse{
     )
     {}
 
-    public static function fromResponse(array $response){
+    public static function fromResponse(array $response): ComfirmOrderResponse{
         $body = $response["MessageModelList"][0];
 
         return new ComfirmOrderResponse(

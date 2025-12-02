@@ -9,7 +9,7 @@ use HttpClient\Infrastructure\HttpClient;
 use HttpClient\Infrastructure\MultipartClient;
 use HttpClient\Infrastructure\Enum\RequestType;
 use HttpClient\Infrastructure\ValueObject\HttpParams;
-
+use RakutenApi\Infrastructure\RakutenApi\Shared\Enum\ReturnType;
 use RakutenApi\Infrastructure\RakutenApi\Shared\ValueObject\RakutenResponseStatus;
 
 /**
@@ -65,10 +65,11 @@ class RakutenApiClient
         string|RequestType $requestType,
         string $uri,
         array|HttpParams $params,
-        array $headers = []
-    ): array {
+        array $headers = [],
+        string|ReturnType $returnType = ReturnType::JSON
+    ): array|string {
         $attempt = 0;
-
+        $returnType = $returnType instanceof ReturnType ? $returnType : ReturnType::tryFrom($returnType);
         while (true) {
             // 毎回最新の認証ヘッダを付与
             $headers['Authorization'] = $this->auth->rakutenAuth();
@@ -83,7 +84,12 @@ class RakutenApiClient
             $status = RakutenResponseStatus::fromStatusCode($response->code());
 
             if ($status->isSuccess()) {
-                return $response->json();
+                return match ($returnType){
+                    ReturnType::JSON=>$response->json(),
+                    ReturnType::TEXT=>$response->body(),
+                    ReturnType::XML=>$response->body(),
+                    default=>$response->body(),
+                };
             }
 
             if (!$status->willRetry()) {
