@@ -2,7 +2,6 @@
 
 namespace RakutenApi\Infrastructure\RakutenApi\R_CabinetApi;
 
-require_once __DIR__ . "/../../../../vendor/autoload.php";
 
 use Exception;
 use HttpClient\App\Port\MultiPartClientPort;
@@ -83,7 +82,7 @@ class R_CabinetApi implements R_CabinetPort
         );
         return FolderResponse::fromXMLResponse((string)$response);
     }
-    public function insertImage(array|InsertImageParams $imagePrams, string $imagePath): bool
+    public function insertImage(array|InsertImageParams $imagePrams, string $imagePath): string|bool
     {
         // 1. パラメータ正規化（array → InsertImageParams）
         if (is_array($imagePrams)) {
@@ -108,6 +107,7 @@ class R_CabinetApi implements R_CabinetPort
 
         // 4. レスポンスXMLをパース
         $xml = @simplexml_load_string($body);
+        $json = json_decode(json_encode($xml),true);
         if ($xml === false) {
             throw new Exception("画像登録APIレスポンスの解析に失敗しました: {$body}");
         }
@@ -129,7 +129,7 @@ class R_CabinetApi implements R_CabinetPort
             throw new Exception("画像登録に失敗しました。resultCode={$resultCode}");
         }
 
-        return true;
+        return $json["cabinetFileInsertResult"]["FileId"]??false;
     }
 
     /**
