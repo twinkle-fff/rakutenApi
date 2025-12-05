@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3b641c226be9483ce177a38000b6b1f9",
+    "content-hash": "f52a95a8a77ec8705f2056d324eb51b2",
     "packages": [
         {
             "name": "graham-campbell/result-type",
@@ -70,11 +70,17 @@
         },
         {
             "name": "keisukesaichi/http-client",
-            "version": "1.0.0",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twinkle-fff/httpClient.git",
+                "reference": "a1017176e186aa47134369e7f403e6533c52a5b4"
+            },
             "dist": {
-                "type": "path",
-                "url": "../httpClient",
-                "reference": "6554924253890b51a1472bdc6f2420579f3c4842"
+                "type": "zip",
+                "url": "https://api.github.com/repos/twinkle-fff/httpClient/zipball/a1017176e186aa47134369e7f403e6533c52a5b4",
+                "reference": "a1017176e186aa47134369e7f403e6533c52a5b4",
+                "shasum": ""
             },
             "type": "library",
             "autoload": {
@@ -82,6 +88,7 @@
                     "HttpClient\\": "HttpClient/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -91,10 +98,11 @@
                     "email": "keisuke_saichi@genectbox.com"
                 }
             ],
-            "transport-options": {
-                "symlink": true,
-                "relative": true
-            }
+            "support": {
+                "issues": "https://github.com/twinkle-fff/httpClient/issues",
+                "source": "https://github.com/twinkle-fff/httpClient/tree/v1.0.1"
+            },
+            "time": "2025-12-04T10:35:48+00:00"
         },
         {
             "name": "phpoption/phpoption",

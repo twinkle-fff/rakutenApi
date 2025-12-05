@@ -1,6 +1,5 @@
 <?php
 namespace RakutenApi\Infrastructure\RakutenApi\NavigationApi;
-require_once __DIR__."/../../../../vendor/autoload.php";
 use Exception;
 use HttpClient\Infrastructure\Enum\RequestType;
 use RakutenApi\Application\Port\NavigationPort;

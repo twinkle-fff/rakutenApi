@@ -1,8 +1,6 @@
 <?php
 namespace RakutenApi\Infrastructure\RakutenApi\ItemApi;
 
-require_once __DIR__ . "/../../../../vendor/autoload.php";
-
 use Generator;
 
 use RakutenApi\Application\Port\RakutenApi\ItemAPiPort;

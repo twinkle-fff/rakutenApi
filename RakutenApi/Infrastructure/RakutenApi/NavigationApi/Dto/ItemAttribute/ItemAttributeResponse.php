@@ -1,6 +1,5 @@
 <?php
 namespace RakutenApi\Infrastructure\RakutenApi\NavigationApi\Dto\ItemAttribute;
-require_once __DIR__."/../../../../../../vendor/autoload.php";
 use RakutenApi\Infrastructure\RakutenApi\NavigationApi\Dto\ItemAttribute\Response\Genre;
 use RakutenApi\Infrastructure\RakutenApi\NavigationApi\Dto\ItemAttribute\Response\Version;
 use RakutenApi\Infrastructure\RakutenApi\OrderApi\Dto\Shared\BaseResponseDto;

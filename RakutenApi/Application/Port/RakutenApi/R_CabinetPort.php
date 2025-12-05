@@ -5,5 +5,5 @@ use RakutenApi\Infrastructure\RakutenApi\R_CabinetApi\Dto\InsertImage\InsertImag
 
 interface R_CabinetPort{
     public function getFolders(): array;
-    public function insertImage(array|InsertImageParams $imagePrams, string $imagePath):bool;
+    public function insertImage(array|InsertImageParams $imagePrams, string $imagePath):string|bool;
 }
