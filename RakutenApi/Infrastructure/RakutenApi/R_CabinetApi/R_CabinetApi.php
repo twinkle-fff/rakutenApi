@@ -2,7 +2,6 @@
 
 namespace RakutenApi\Infrastructure\RakutenApi\R_CabinetApi;
 
-
 use Exception;
 use HttpClient\App\Port\MultiPartClientPort;
 use HttpClient\Infrastructure\Enum\RequestType;
@@ -50,33 +49,39 @@ class R_CabinetApi implements R_CabinetPort
     public function getFolders(?int $limit = null): array
     {
         $limit ??= self::GET_FOLDER_DEFAULT_LIMIT;
-        $offset = 0;
+        $offset = 1;
         $readFolders = 0;
+        $result = [];
 
         while (true) {
-            $result = [];
-
             $response = $this->getFolderSinglePage($offset, $limit);
             $readFolders += $response->folderCount;
-
             $result = array_merge($result, $response->folders);
-            $offset++;
             if ($readFolders >= $response->folderAllCount) {
                 break;
             }
+            $offset++;
         }
 
         return $result;
     }
 
-    private function getFolderSinglePage(int $offset, ?int $limit = null): FolderResponse
+    public function getFolderSinglePage(int $offset, ?int $limit = null): FolderResponse
     {
 
         $limit ??= self::GET_FOLDER_DEFAULT_LIMIT;
+        $params = [
+            "limit"=>$limit
+        ];
+
+        if($offset != false){
+            $params["offset"] = $offset;
+        }
+
         $response = $this->rakutenApiClient->request(
             RequestType::GET,
             self::GET_FOLDER_ENDPOINT,
-            [],
+            $params,
             [],
             ReturnType::TEXT
         );
@@ -171,14 +176,14 @@ class R_CabinetApi implements R_CabinetPort
 if (basename(__FILE__) === basename($_SERVER['SCRIPT_FILENAME'])) {
     $rca = new R_CabinetApi();
 
-    $imagePrams = new InsertImageParams(
-        "sicas",
-        "9978333",
-        null,
-        null
-    );
+    // $imagePrams = new InsertImageParams(
+    //     "sicas",
+    //     "9978333",
+    //     null,
+    //     null
+    // );
 
-    $rca->insertImage($imagePrams, "/Library/WebServer/Documents/library/rakutenApi/super_sale.jpg");
+    // $rca->insertImage($imagePrams, "/Library/WebServer/Documents/library/rakutenApi/super_sale.jpg");
 
-    // echo json_encode($rca->getFolders(),JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);
+    echo json_encode($rca->getFolders(),JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);
 }
