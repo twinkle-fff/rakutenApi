@@ -26,10 +26,10 @@ readonly class Shipping extends BaseResponseDto
      * @param DateTime          $shippingDate        出荷日（DateTime 形式に自動変換）
      */
     protected function __construct(
-        public int $shippingDetailId,
+        public ?int $shippingDetailId,
         public ?int $shippingNumber,
-        public DeliveryCompany $deliveryCompany,
-        public string $deliveryCompanyName,
-        public DateTime $shippingDate
+        public ?DeliveryCompany $deliveryCompany,
+        public ?string $deliveryCompanyName,
+        public ?DateTime $shippingDate
     ) {}
 }
