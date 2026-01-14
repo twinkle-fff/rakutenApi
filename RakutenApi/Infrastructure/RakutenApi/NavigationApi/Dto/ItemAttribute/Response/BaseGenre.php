@@ -68,7 +68,7 @@ use RakutenApi\Infrastructure\RakutenApi\OrderApi\Dto\Shared\BaseResponseDto;
  * @property-read bool           $lowest       最下層ジャンルかどうか
  * @property-read GenreProperty  $properties   属性必須制御などの追加情報
  */
-readonly class BaseGenre extends BaseResponseDto
+final readonly class BaseGenre extends BaseResponseDto
 {
     /**
      * @param int            $genreId

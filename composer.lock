@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f52a95a8a77ec8705f2056d324eb51b2",
+    "content-hash": "7eba79e3c2dfdde5b00b0f2c9351a0bc",
     "packages": [
         {
             "name": "graham-campbell/result-type",
@@ -69,17 +69,53 @@
             "time": "2024-07-20T21:45:45+00:00"
         },
         {
-            "name": "keisukesaichi/http-client",
+            "name": "keisukesaichi/api-dto",
             "version": "1.0.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/twinkle-fff/httpClient.git",
-                "reference": "a1017176e186aa47134369e7f403e6533c52a5b4"
+                "url": "https://github.com/twinkle-fff/APIDto.git",
+                "reference": "59efd3f51d65e0503ccc0d85d8f6aefe0f9f6aae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twinkle-fff/httpClient/zipball/a1017176e186aa47134369e7f403e6533c52a5b4",
-                "reference": "a1017176e186aa47134369e7f403e6533c52a5b4",
+                "url": "https://api.github.com/repos/twinkle-fff/APIDto/zipball/59efd3f51d65e0503ccc0d85d8f6aefe0f9f6aae",
+                "reference": "59efd3f51d65e0503ccc0d85d8f6aefe0f9f6aae",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ApiDto\\": "ApiDto/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "twinkle-fff",
+                    "email": "keisuke_saichi@genectbox.com"
+                }
+            ],
+            "support": {
+                "issues": "https://github.com/twinkle-fff/APIDto/issues",
+                "source": "https://github.com/twinkle-fff/APIDto/tree/v1.0.1"
+            },
+            "time": "2026-01-07T04:16:44+00:00"
+        },
+        {
+            "name": "keisukesaichi/http-client",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twinkle-fff/httpClient.git",
+                "reference": "098660288ac06cea0b66fca2815b5e85a97de6da"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twinkle-fff/httpClient/zipball/098660288ac06cea0b66fca2815b5e85a97de6da",
+                "reference": "098660288ac06cea0b66fca2815b5e85a97de6da",
                 "shasum": ""
             },
             "type": "library",
@@ -100,9 +136,9 @@
             ],
             "support": {
                 "issues": "https://github.com/twinkle-fff/httpClient/issues",
-                "source": "https://github.com/twinkle-fff/httpClient/tree/v1.0.1"
+                "source": "https://github.com/twinkle-fff/httpClient/tree/v1.1.0"
             },
-            "time": "2025-12-04T10:35:48+00:00"
+            "time": "2026-01-14T09:58:38+00:00"
         },
         {
             "name": "phpoption/phpoption",
