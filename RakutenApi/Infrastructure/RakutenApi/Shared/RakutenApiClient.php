@@ -80,7 +80,6 @@ class RakutenApiClient
                 $params,
                 headers: $headers
             );
-
             $status = RakutenResponseStatus::fromStatusCode($response->code());
             
             if ($status->isSuccess()) {
