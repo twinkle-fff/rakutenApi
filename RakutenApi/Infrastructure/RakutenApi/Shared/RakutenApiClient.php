@@ -80,9 +80,8 @@ class RakutenApiClient
                 $params,
                 headers: $headers
             );
-
             $status = RakutenResponseStatus::fromStatusCode($response->code());
-            
+
             if ($status->isSuccess()) {
                 return match ($returnType){
                     ReturnType::JSON=>$response->json(),

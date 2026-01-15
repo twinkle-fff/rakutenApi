@@ -1,5 +1,5 @@
 <?php
-namespace RakutenApi\Infrastructure\RakutenApi\InventoriesApi\Dto\Request;
+namespace RakutenApi\Infrastructure\RakutenApi\InventoriesApi\UpsertVariants\Dto\Request;
 
 use ApiDto\BaseRequestDto\BaseRequestDto;
 use RakutenApi\Infrastructure\RakutenApi\InventoriesApi\Dto\Request\OperationLeadTime\OperationLeadTime;
