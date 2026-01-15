@@ -1,8 +1,6 @@
 <?php
 namespace RakutenApi\Infrastructure\RakutenApi\InventoriesApi;
 
-require_once __DIR__."/../../../../vendor/autoload.php";
-
 use RakutenApi\Application\Port\RakutenApi\InventoriesApiPort;
 use RakutenApi\Infrastructure\RakutenApi\InventoriesApi\GetVariant\Dto\Response\GetVariantResponse;
 use RakutenApi\Infrastructure\RakutenApi\InventoriesApi\GetVariant\GetVariant;
