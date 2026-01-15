@@ -3,7 +3,7 @@ namespace RakutenApi\Infrastructure\RakutenApi\InventoriesApi\UpsertVariants;
 
 use HttpClient\Infrastructure\Enum\RequestType;
 use HttpClient\Infrastructure\ValueObject\HttpParams;
-use RakutenApi\Infrastructure\RakutenApi\InventoriesApi\UpsertVariants\Dto\Request\UpsertVariantRequest;
+use RakutenApi\Infrastructure\RakutenApi\InventoriesApi\Dto\Request\UpsertVariantRequest;
 use RakutenApi\Infrastructure\RakutenApi\Shared\Enum\ReturnType;
 use RakutenApi\Infrastructure\RakutenApi\Shared\RakutenApiClient;
 
