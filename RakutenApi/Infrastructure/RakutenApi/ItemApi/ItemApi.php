@@ -5,6 +5,7 @@ use Generator;
 
 use RakutenApi\Application\Port\RakutenApi\ItemAPiPort;
 use RakutenApi\Infrastructure\RakutenApi\ItemApi\Dto\ItemSearchParams;
+use RakutenApi\Infrastructure\RakutenApi\ItemApi\Dto\RakutenItem;
 use RakutenApi\Infrastructure\RakutenApi\ItemApi\Dto\RakutenSearchItemResponse;
 use RakutenApi\Infrastructure\RakutenApi\Shared\RakutenApiClient;
 
@@ -37,7 +38,7 @@ class ItemApi implements ItemAPiPort
      * - メモリを消費せず1商品ずつ yield する
      *
      * @param array|ItemSearchParams|null $params
-     * @return Generator<array>
+     * @return Generator<int,RakutenItem>
      */
     public function streamAllItems(array|ItemSearchParams|null $params = null): Generator
     {
