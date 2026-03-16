@@ -5,7 +5,7 @@ use Generator;
 
 use RakutenApi\Application\Port\RakutenApi\ItemAPiPort;
 use RakutenApi\Infrastructure\RakutenApi\ItemApi\Dto\ItemSearchParams;
-use RakutenApi\Infrastructure\RakutenApi\ItemApi\Dto\RakutenItem;
+use RakutenApi\Infrastructure\RakutenApi\ItemApi\Dto\RakutenItem\RakutenItem;
 use RakutenApi\Infrastructure\RakutenApi\ItemApi\Dto\RakutenSearchItemResponse;
 use RakutenApi\Infrastructure\RakutenApi\Shared\RakutenApiClient;
 
@@ -52,11 +52,10 @@ class ItemApi implements ItemAPiPort
         $offset = $normalizedParams->offset ?? 0;
 
         while (true) {
-            $response = $this->searchItems($normalizedParams);
-
+            $response = $this->searchItems(params: $normalizedParams);
             // 1件ずつ返す
             foreach ($response->results as $result) {
-                yield $result;
+                yield $result->item;
             }
 
             // 次ページ判定

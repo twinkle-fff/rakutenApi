@@ -3,7 +3,7 @@ namespace RakutenApi\Application\Port\RakutenApi;
 
 use Generator;
 use RakutenApi\Infrastructure\RakutenApi\ItemApi\Dto\ItemSearchParams;
-use RakutenApi\Infrastructure\RakutenApi\ItemApi\Dto\RakutenItem;
+use RakutenApi\Infrastructure\RakutenApi\ItemApi\Dto\RakutenItem\RakutenItem;
 
 /**
  * ItemAPiPort

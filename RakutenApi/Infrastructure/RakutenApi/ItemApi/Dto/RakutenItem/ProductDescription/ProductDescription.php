@@ -1,5 +1,5 @@
 <?php
-namespace RakutenApi\Infrastructure\RakutenApi\ItemApi\Dto\RakutenItem;
+namespace RakutenApi\Infrastructure\RakutenApi\ItemApi\Dto\RakutenItem\ProductDescription;
 
 use RakutenApi\Infrastructure\RakutenApi\OrderApi\Dto\Shared\BaseResponseDto;
 

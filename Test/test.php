@@ -15,6 +15,5 @@ $itemApi = new ItemApi();
 $res = $itemApi->streamAllItems();
 
 foreach($res as $r){
-    var_dump($r);
-    die();
+    echo json_encode($r,JSON_UNESCAPED_UNICODE).PHP_EOL;
 }
