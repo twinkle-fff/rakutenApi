@@ -3,6 +3,7 @@ namespace RakutenApi\Application\Port\RakutenApi;
 
 use Generator;
 use RakutenApi\Infrastructure\RakutenApi\ItemApi\Dto\ItemSearchParams;
+use RakutenApi\Infrastructure\RakutenApi\ItemApi\Dto\RakutenItem\RakutenItem;
 
 /**
  * ItemAPiPort
@@ -26,7 +27,7 @@ interface ItemAPiPort
      * @param array||null $params
      *        API 検索パラメータ（null の場合 defaultParams が適用される）
      *
-     * @return Generator<array>
+     * @return Generator<int,RakutenItem>
      *        各商品の連想配列を 1件ずつ yield するジェネレータ
      */
     public function streamAllItems(array|ItemSearchParams|null $params = null): Generator;
