@@ -1,0 +1,35 @@
+{
+    "resultCode": "N000",
+    "resultMessageList": {
+        "resultMessage": {
+            "code": "N000",
+            "message": "Succeeded."
+        }
+    },
+    "result": {
+        "delvdateMasterList": {
+            "delvdateMaster": [
+                {
+                    "delvdateNumber": "0",
+                    "delvdateCaption": "testDateCaption"
+                },
+                {
+                    "delvdateNumber": "1",
+                    "delvdateCaption": "当日お届けします。"
+                },
+                {
+                    "delvdateNumber": "1000",
+                    "delvdateCaption": "1〜2日以内に発送予定（店舗休業日を除く）"
+                },
+                {
+                    "delvdateNumber": "2",
+                    "delvdateCaption": "３〜4日でのお届けとなります。"
+                },
+                {
+                    "delvdateNumber": "3",
+                    "delvdateCaption": "一週間前後でのお届けとなります。"
+                }
+            ]
+        }
+    }
+}

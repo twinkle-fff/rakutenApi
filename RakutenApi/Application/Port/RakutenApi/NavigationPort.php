@@ -1,5 +1,5 @@
 <?php
-namespace RakutenApi\Application\Port;
+namespace RakutenApi\Application\Port\RakutenApi;
 
 use RakutenApi\Infrastructure\RakutenApi\NavigationApi\Dto\ItemAttribute\ItemAttributeResponse;
 

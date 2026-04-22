@@ -1,8 +1,6 @@
 <?php
 namespace RakutenApi\Infrastructure\RakutenApi\InventoriesApi;
 
-require_once __DIR__."/../../../../vendor/autoload.php";
-
 use RakutenApi\Application\Port\RakutenApi\InventoriesApiPort;
 use RakutenApi\Infrastructure\RakutenApi\InventoriesApi\GetVariant\Dto\Response\GetVariantResponse;
 use RakutenApi\Infrastructure\RakutenApi\InventoriesApi\GetVariant\GetVariant;
@@ -67,15 +65,4 @@ final class InventoriesApi implements InventoriesApiPort
     {
         return $this->getVariant->execute($manageNumber, $sku);
     }
-}
-
-if (basename(__FILE__) === basename($_SERVER['SCRIPT_FILENAME'])) {
-    require_once __DIR__."/../../../../vendor/autoload.php";
-
-    $ia = new InventoriesApi();
-    $upsertVariantRequest = UpsertVariantRequest::empty()
-        ->set("mode", \RakutenApi\Infrastructure\RakutenApi\InventoriesApi\Enum\Mode::ABSOLUTE)
-        ->set("quantity", 500);
-
-    $ia->upsertVariants("22m0e3iuhb7rcorc", "ippon", $upsertVariantRequest);
 }
