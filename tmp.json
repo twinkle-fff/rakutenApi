@@ -1,35 +1,39 @@
-{
-    "resultCode": "N000",
-    "resultMessageList": {
-        "resultMessage": {
-            "code": "N000",
-            "message": "Succeeded."
-        }
-    },
-    "result": {
-        "delvdateMasterList": {
-            "delvdateMaster": [
-                {
-                    "delvdateNumber": "0",
-                    "delvdateCaption": "testDateCaption"
-                },
-                {
-                    "delvdateNumber": "1",
-                    "delvdateCaption": "当日お届けします。"
-                },
-                {
-                    "delvdateNumber": "1000",
-                    "delvdateCaption": "1〜2日以内に発送予定（店舗休業日を除く）"
-                },
-                {
-                    "delvdateNumber": "2",
-                    "delvdateCaption": "３〜4日でのお届けとなります。"
-                },
-                {
-                    "delvdateNumber": "3",
-                    "delvdateCaption": "一週間前後でのお届けとなります。"
-                }
-            ]
-        }
+object(RakutenApi\Infrastructure\RakutenApi\InventoriesSettingApi\GetOperationLeadTime\Dto\GetOperationLeadTimeResponse\GetOperationLeadTimeResponse)#4 (3) {
+  ["resultCode"]=>
+  string(4) "N000"
+  ["resultMessageList"]=>
+  object(RakutenApi\Infrastructure\RakutenApi\InventoriesSettingApi\GetOperationLeadTime\Dto\GetOperationLeadTimeResponse\ResultMessageModelList\ResultMessageModelList)#10 (1) {
+    ["resultMessage"]=>
+    array(1) {
+      [0]=>
+      object(RakutenApi\Infrastructure\RakutenApi\InventoriesSettingApi\GetOperationLeadTime\Dto\GetOperationLeadTimeResponse\ResultMessageModelList\ResultMessage\ResultMessage)#14 (2) {
+        ["code"]=>
+        string(4) "N000"
+        ["message"]=>
+        string(10) "Succeeded."
+      }
     }
+  }
+  ["result"]=>
+  object(RakutenApi\Infrastructure\RakutenApi\InventoriesSettingApi\GetOperationLeadTime\Dto\GetOperationLeadTimeResponse\OperationLeadTimeBizModel\OperationLeadTimeBizModel)#13 (1) {
+    ["operationLeadTimeList"]=>
+    object(RakutenApi\Infrastructure\RakutenApi\InventoriesSettingApi\GetOperationLeadTime\Dto\GetOperationLeadTimeResponse\OperationLeadTimeBizModel\OperationLeadTimeList\OperationLeadTimeList)#15 (1) {
+      ["operationLeadTime"]=>
+      array(1) {
+        [0]=>
+        object(RakutenApi\Infrastructure\RakutenApi\InventoriesSettingApi\GetOperationLeadTime\Dto\GetOperationLeadTimeResponse\OperationLeadTimeBizModel\OperationLeadTimeList\OperationLeadTime\OperationLeadTime)#22 (5) {
+          ["inStockDefaultFlag"]=>
+          bool(true)
+          ["outOfStockDefaultFlag"]=>
+          bool(true)
+          ["operationLeadTimeId"]=>
+          string(2) "41"
+          ["name"]=>
+          string(26) "出荷リードタイム01"
+          ["numberOfDays"]=>
+          string(1) "1"
+        }
+      }
+    }
+  }
 }
