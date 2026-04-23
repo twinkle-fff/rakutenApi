@@ -1,0 +1,39 @@
+object(RakutenApi\Infrastructure\RakutenApi\InventoriesSettingApi\GetOperationLeadTime\Dto\GetOperationLeadTimeResponse\GetOperationLeadTimeResponse)#4 (3) {
+  ["resultCode"]=>
+  string(4) "N000"
+  ["resultMessageList"]=>
+  object(RakutenApi\Infrastructure\RakutenApi\InventoriesSettingApi\GetOperationLeadTime\Dto\GetOperationLeadTimeResponse\ResultMessageModelList\ResultMessageModelList)#10 (1) {
+    ["resultMessage"]=>
+    array(1) {
+      [0]=>
+      object(RakutenApi\Infrastructure\RakutenApi\InventoriesSettingApi\GetOperationLeadTime\Dto\GetOperationLeadTimeResponse\ResultMessageModelList\ResultMessage\ResultMessage)#14 (2) {
+        ["code"]=>
+        string(4) "N000"
+        ["message"]=>
+        string(10) "Succeeded."
+      }
+    }
+  }
+  ["result"]=>
+  object(RakutenApi\Infrastructure\RakutenApi\InventoriesSettingApi\GetOperationLeadTime\Dto\GetOperationLeadTimeResponse\OperationLeadTimeBizModel\OperationLeadTimeBizModel)#13 (1) {
+    ["operationLeadTimeList"]=>
+    object(RakutenApi\Infrastructure\RakutenApi\InventoriesSettingApi\GetOperationLeadTime\Dto\GetOperationLeadTimeResponse\OperationLeadTimeBizModel\OperationLeadTimeList\OperationLeadTimeList)#15 (1) {
+      ["operationLeadTime"]=>
+      array(1) {
+        [0]=>
+        object(RakutenApi\Infrastructure\RakutenApi\InventoriesSettingApi\GetOperationLeadTime\Dto\GetOperationLeadTimeResponse\OperationLeadTimeBizModel\OperationLeadTimeList\OperationLeadTime\OperationLeadTime)#22 (5) {
+          ["inStockDefaultFlag"]=>
+          bool(true)
+          ["outOfStockDefaultFlag"]=>
+          bool(true)
+          ["operationLeadTimeId"]=>
+          string(2) "41"
+          ["name"]=>
+          string(26) "出荷リードタイム01"
+          ["numberOfDays"]=>
+          string(1) "1"
+        }
+      }
+    }
+  }
+}

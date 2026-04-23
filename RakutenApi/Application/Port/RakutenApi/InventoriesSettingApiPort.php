@@ -1,0 +1,12 @@
+<?php
+namespace RakutenApi\Application\Port\RakutenApi;
+
+use RakutenApi\Infrastructure\RakutenApi\InventoriesSettingApi\GetDelvDateMaster\Dto\GetDelvDataMasterRequest\GetDelvDataMasterRequest;
+use RakutenApi\Infrastructure\RakutenApi\InventoriesSettingApi\GetDelvDateMaster\Dto\GetDelvDateMasterResponse\GetDelvDateMasterResponse;
+use RakutenApi\Infrastructure\RakutenApi\InventoriesSettingApi\GetOperationLeadTime\Dto\GetOperationLeadTimeRequest\GetOperationLeadTimeRequest;
+use RakutenApi\Infrastructure\RakutenApi\InventoriesSettingApi\GetOperationLeadTime\Dto\GetOperationLeadTimeResponse\GetOperationLeadTimeResponse;
+
+interface InventoriesSettingApiPort{
+    public function getDelvDateMaster(GetDelvDataMasterRequest|string|null $request):GetDelvDateMasterResponse;
+    public function getOperationLeadTime(GetOperationLeadTimeRequest|string|null $request):GetOperationLeadTimeResponse;
+}

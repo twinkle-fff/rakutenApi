@@ -32,4 +32,5 @@ readonly class RakutenSearchItemResponse extends BaseResponseDto
         public array $results
     ) {}
 
+
 }

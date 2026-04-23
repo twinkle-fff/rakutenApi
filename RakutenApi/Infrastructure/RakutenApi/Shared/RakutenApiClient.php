@@ -57,7 +57,7 @@ class RakutenApiClient
      * @param array|HttpParams        $params      リクエストパラメータ
      * @param array<string,string>    $headers     追加ヘッダ
      *
-     * @return array レスポンスJSONを配列化したもの
+     * @return array|string レスポンスJSONを配列化したもの
      *
      * @throws Exception リトライ不能 or 試行回数上限時
      */

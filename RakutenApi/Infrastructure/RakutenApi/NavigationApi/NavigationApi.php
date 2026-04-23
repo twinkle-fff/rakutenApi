@@ -2,7 +2,7 @@
 namespace RakutenApi\Infrastructure\RakutenApi\NavigationApi;
 use Exception;
 use HttpClient\Infrastructure\Enum\RequestType;
-use RakutenApi\Application\Port\NavigationPort;
+use RakutenApi\Application\Port\RakutenApi\NavigationPort;
 use RakutenApi\Infrastructure\RakutenApi\NavigationApi\Dto\ItemAttribute\ItemAttributeResponse;
 use RakutenApi\Infrastructure\RakutenApi\Shared\RakutenApiClient;
 
@@ -33,5 +33,4 @@ class NavigationApi implements NavigationPort{
 if(basename(__FILE__) === basename($_SERVER['SCRIPT_FILENAME'])){
     $na = new NavigationApi();
     echo json_encode($na->getItemAttribute("410946"),JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);
-
 }

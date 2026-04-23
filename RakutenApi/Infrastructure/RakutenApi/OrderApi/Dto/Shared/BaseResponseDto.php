@@ -138,6 +138,7 @@ readonly abstract class BaseResponseDto
             if ($value instanceof $type) {
                 return $value;
             }
+
             if (is_array($value)) {
                 /** @var class-string<self> $type */
                 return $type::fromResponse($value);
@@ -177,3 +178,4 @@ readonly abstract class BaseResponseDto
         return $value;
     }
 }
+
