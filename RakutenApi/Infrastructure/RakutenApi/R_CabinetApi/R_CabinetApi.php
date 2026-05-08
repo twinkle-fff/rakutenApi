@@ -5,7 +5,7 @@ namespace RakutenApi\Infrastructure\RakutenApi\R_CabinetApi;
 use Exception;
 use HttpClient\App\Port\MultiPartClientPort;
 use HttpClient\Infrastructure\Enum\RequestType;
-use HttpClient\Infrastructure\MultipartClient;
+use HttpClient\Infrastructure\MultiPartClient;
 use RakutenApi\Application\Port\RakutenApi\R_CabinetPort;
 use RakutenApi\Infrastructure\RakutenApi\R_CabinetApi\Dto\GetFolder\Folder;
 use RakutenApi\Infrastructure\RakutenApi\R_CabinetApi\Dto\GetFolder\FolderResponse;
@@ -73,7 +73,7 @@ class R_CabinetApi implements R_CabinetPort
     ) {
         $this->rakutenAuth = $rakutenAuth ?? new RakutenAuth();
         $this->rakutenApiClient = new RakutenApiClient($this->rakutenAuth);
-        $this->multiPartClient = $multiPartClient ?? new MultipartClient();
+        $this->multiPartClient = $multiPartClient ?? new MultiPartClient();
     }
 
     /**

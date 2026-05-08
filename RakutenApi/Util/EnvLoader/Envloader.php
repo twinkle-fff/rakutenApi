@@ -4,7 +4,7 @@ namespace RakutenApi\Util\EnvLoader;
 use Dotenv\Dotenv;
 use Exception;
 
-class Envloader{
+class EnvLoader{
     private const string DEFAULT_FILENAME = ".env.local";
     private static ?string $envFilePath = null;
     private static ?string $envFileName = null;

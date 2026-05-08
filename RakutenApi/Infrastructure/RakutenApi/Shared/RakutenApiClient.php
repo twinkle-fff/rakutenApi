@@ -6,7 +6,7 @@ use Exception;
 use HttpClient\App\Port\HttpClientPort;
 use HttpClient\App\Port\MultiPartClientPort;
 use HttpClient\Infrastructure\HttpClient;
-use HttpClient\Infrastructure\MultipartClient;
+use HttpClient\Infrastructure\MultiPartClient;
 use HttpClient\Infrastructure\Enum\RequestType;
 use HttpClient\Infrastructure\ValueObject\HttpParams;
 use RakutenApi\Infrastructure\RakutenApi\Shared\Enum\ReturnType;
@@ -43,7 +43,7 @@ class RakutenApiClient
     ) {
         $this->auth           = $auth ?? new RakutenAuth();
         $this->httpClient     = $httpClient ?? new HttpClient();
-        $this->multiPartClient = $multiPartClient ?? new MultipartClient();
+        $this->multiPartClient = $multiPartClient ?? new MultiPartClient();
     }
 
     /**
@@ -81,7 +81,7 @@ class RakutenApiClient
                 headers: $headers
             );
             $status = RakutenResponseStatus::fromStatusCode($response->code());
-            
+
             if ($status->isSuccess()) {
                 return match ($returnType){
                     ReturnType::JSON=>$response->json(),

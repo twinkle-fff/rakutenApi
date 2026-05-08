@@ -42,20 +42,20 @@ use RakutenApi\Infrastructure\RakutenApi\OrderApi\Dto\Shared\BaseResponseDto;
 final readonly class ReferencePrice extends BaseResponseDto
 {
     /**
-     * @param PriceDisplayType $displayType
+     * @param PriceDisplayType|null $displayType
      *  価格の表示方法（例：税込 / 税抜）
      *
-     * @param PriceDisplayMessageType $type
+     * @param PriceDisplayMessageType|null $type
      *  価格表示メッセージの種別
      *  （当店通常価格 / メーカー希望小売価格 / 価格ナビ参照 等）
      *
-     * @param string $value
+     * @param string|null $value
      *  表示対象となる価格値
      *  ※ API仕様上 string として返却されるため数値変換は行わない
      */
     public function __construct(
-        public PriceDisplayType $displayType,
-        public PriceDisplayMessageType $type,
-        public string $value
+        public ?PriceDisplayType $displayType,
+        public ?PriceDisplayMessageType $type,
+        public ?string $value
     ) {}
 }

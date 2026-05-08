@@ -2,7 +2,7 @@
 
 namespace RakutenApi\Infrastructure\RakutenApi\Shared;
 
-use RakutenApi\Util\EnvLoader\Envloader;
+use RakutenApi\Util\EnvLoader\EnvLoader;
 use RuntimeException;
 
 /**
@@ -57,13 +57,13 @@ class RakutenAuth
      */
     private function loadEnv(?string $envFileName, ?string $envFilePath): void
     {
-        $this->rakutenServiceSecret = Envloader::getEnv(
+        $this->rakutenServiceSecret = EnvLoader::getEnv(
             self::RAKUTEN_SECRET_ENV_KEY,
             $envFileName,
             $envFilePath
         );
 
-        $this->rakutenLicenseKey = Envloader::getEnv(
+        $this->rakutenLicenseKey = EnvLoader::getEnv(
             self::RAKUTEN_LICENSE_ENV_KEY,
             $envFileName,
             $envFilePath
