@@ -31,7 +31,7 @@ final class InventoriesSettingApi implements InventoriesSettingApiPort{
 
     public function getOperationLeadTime(GetOperationLeadTimeRequest|string|null $request): GetOperationLeadTimeResponse
     {
-        return $this->getOperationLeadTime($request);
+        return $this->getOperationLeadTime->execute($request);
     }
 
 }
