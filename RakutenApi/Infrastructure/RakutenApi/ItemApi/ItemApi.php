@@ -101,4 +101,41 @@ class ItemApi implements ItemAPiPort
         $params->setIsInventoryIncluded(true);
         return $params;
     }
+    /**
+     * {@inheritDoc}
+     */
+    public function streamItemsUntilLimit(
+        ItemSearchParams $params,
+        int $limit = 10000
+    ): Generator {
+        $normalizedParams = $params;
+
+        $offset = $normalizedParams->offset ?? 0;
+        $count = 0;
+
+        while (true) {
+            if ($offset >= 10000 || $count >= $limit) {
+                break;
+            }
+
+            $normalizedParams->setOffset($offset);
+
+            $response = $this->searchItems($normalizedParams);
+
+            foreach ($response->results as $result) {
+                if ($count >= $limit) {
+                    break 2;
+                }
+
+                yield $result->item;
+                $count++;
+            }
+
+            if ($offset + $normalizedParams->hits >= $response->numFound) {
+                break;
+            }
+
+            $offset += $normalizedParams->hits;
+        }
+    }
 }
