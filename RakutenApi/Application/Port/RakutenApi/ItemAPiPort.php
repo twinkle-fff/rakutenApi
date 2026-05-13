@@ -31,4 +31,19 @@ interface ItemAPiPort
      *        各商品の連想配列を 1件ずつ yield するジェネレータ
      */
     public function streamAllItems(array|ItemSearchParams|null $params = null): Generator;
+
+        /**
+     * offset 10000 制限を超えない範囲で商品をstream取得します。
+     *
+     * streamAllItems() は全件取得を試みるため、
+     * 検索条件に対する商品数が10000件を超えると
+     * 楽天APIの offset 制限により失敗します。
+     *
+     * 本メソッドは最大取得件数に到達した時点で停止します。
+     *
+     * @param ItemSearchParams $params
+     * @param int $limit
+     * @return Generator<int,RakutenItem>
+     */
+    public function streamItemsUntilLimit(ItemSearchParams $params,int $limit = 10000): Generator;
 }
