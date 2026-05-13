@@ -30,7 +30,14 @@ class RakutenAuth
     public function __construct(
         ?string $envFileName = null,
         ?string $envFilePath = null,
+        ?string $rakutenServiceSecret = null,
+        ?string $rakutenLicenseKey = null,
     ) {
+        if($rakutenServiceSecret !== null && $rakutenLicenseKey !== null){
+            $this->rakutenServiceSecret = $rakutenServiceSecret;
+            $this->rakutenLicenseKey = $rakutenLicenseKey;
+            return;
+        }
         $this->loadEnv($envFileName, $envFilePath);
     }
 
