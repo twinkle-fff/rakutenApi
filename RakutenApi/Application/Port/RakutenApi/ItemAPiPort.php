@@ -24,7 +24,7 @@ interface ItemAPiPort
      * - API の複数ページを内部でハンドリング
      * - 1商品ずつ逐次 yield する
      *
-     * @param array||null $params
+     * @param array|ItemSearchParams|null $params
      *        API 検索パラメータ（null の場合 defaultParams が適用される）
      *
      * @return Generator<int,RakutenItem>
